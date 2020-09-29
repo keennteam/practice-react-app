@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import Federico from './Components/Federico/Federico'
-import NewComponent from './Components/NewComponent/NewComponent'
+import ClassComponent from './Components/ClassComponent/ClassComponent'
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
 
         <Federico />
 
-        <NewComponent />
+        <ClassComponent />
 
       </header>
     </div>
