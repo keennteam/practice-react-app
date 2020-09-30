@@ -12,6 +12,12 @@ class ClassComponent extends React.Component {
     }
   }
 
+  componentDidMount() {
+    //execute this whenever a component re-renders
+
+  }
+
+
   _buttonClick() {
     console.log("Button CLICKED!");
 
