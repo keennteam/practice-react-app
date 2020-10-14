@@ -4,8 +4,12 @@ import './App.css';
 
 import Federico from './Components/Federico/Federico'
 import ClassComponent from './Components/ClassComponent/ClassComponent'
+import FxComponent from './Components/FxComponent/FxComponent'
 
 function App() {
+
+  const appID = "PracticeApp";
+
   return (
     <div className="App">
       <header className="App-header">
@@ -25,7 +29,9 @@ function App() {
 
         <Federico />
 
-        <ClassComponent />
+        <FxComponent />
+
+        <ClassComponent applicationID={appID} />
 
       </header>
     </div>

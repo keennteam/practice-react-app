@@ -1,6 +1,8 @@
 import React from 'react';
 import './ClassComponent.css'
 
+// import CustomComponent1 ...
+
 class ClassComponent extends React.Component {
 
   constructor(props) {
@@ -12,8 +14,11 @@ class ClassComponent extends React.Component {
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     //execute this whenever a component re-renders
+    const response  = await fetch('https://api.github.com/users/bitfede')
+    const data = await response.json()
+    console.log(data);
 
   }
 
@@ -82,10 +87,11 @@ class ClassComponent extends React.Component {
 
   render() {
 
-    // console.log("STATE", this.state)
+    console.log("PROPS", this.props)
 
     return (
       <div id={"newCompContainer"}>
+        <h1>Class Component ---------</h1>
         <p>Hello {this.state.name}</p>
         <button onClick={() => this._buttonClick()}>Change Name</button>
         <p>-------</p>
@@ -96,7 +102,9 @@ class ClassComponent extends React.Component {
 
         {this.displayValidEmails()}
 
-      <br/>
+        <br/>
+
+
       </div>
     )
   }
