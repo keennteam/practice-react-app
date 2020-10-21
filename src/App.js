@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-import Federico from './Components/Federico/Federico'
-import ClassComponent from './Components/ClassComponent/ClassComponent'
+// app pages
+import Home from './Pages/Home/Home'
+import About from './Pages/About/About'
+
+//custom components
 import FxComponent from './Components/FxComponent/FxComponent'
 
+//styles and multimedia
+import './App.css';
+
+//main component
 function App() {
 
-  const appID = "PracticeApp";
+  console.log(window.location);
 
   return (
+    <Router>
     <div className="App">
       <header className="App-header">
 
-
-        <FxComponent />
-
-        <ClassComponent applicationID={appID} />
+        <Switch>
+          <Route exact path="/" >
+            <Home />
+          </Route>
+          <Route exact path="/about" >
+            <About />
+          </Route>
+        </Switch>
 
       </header>
     </div>
+    </Router>
   );
 }
 
