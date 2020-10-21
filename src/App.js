@@ -6,7 +6,7 @@ import FxComponent from './Components/FxComponent/FxComponent'
 
 function App() {
 
-  const appID = "PracticeApp";
+  console.log(window.location);
 
   return (
     <div className="App">
