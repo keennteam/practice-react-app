@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
 
+// custom component imports
+import GithubProfileCard from '../GithubProfileCard/GithubProfileCard'
+
+
 
 const FxComponent = (props) => {
 
@@ -9,38 +13,15 @@ const FxComponent = (props) => {
   const [isLoading, setIsLoading] = useState(false);
 
 
-  // functions
-  const displayProfileInfo = () => {
-    if (!githubData) {
-      return (
-        <p>no data to display</p>
-      )
-    }
 
-    if (isLoading === true) {
-      return (
-        <p>LOADING...</p>
-      )
-    }
-
-    console.log(githubData);
-
-    return (
-      <div>
-        <p>User: {githubUser}</p>
-        <p>ID: {githubData.company}</p>
-        <p>company: {githubData.id}</p>
-        <img src={githubData.avatar_url} />
-      </div>
-    )
-
-  }
-
+  //FUNCTIONS
+  // handle the input of the text field
   const _handleInputChange = (e) => {
     console.log("you typed", e.target.value)
     setGithubUser(e.target.value)
   }
 
+  //handles the click of the mouse on the button
   const _handleClickBtn = async () => {
     setGithubData(null)
     console.log("button click, gotta call API", githubUser);
@@ -60,7 +41,7 @@ const FxComponent = (props) => {
       <input onChange={(e) => _handleInputChange(e)} type="text" />
       <button onClick={() => _handleClickBtn()}>Submit</button>
       <hr />
-      {displayProfileInfo()}
+      <GithubProfileCard user={githubUser} loading={isLoading} data={githubData} />
     </div>
   );
 
